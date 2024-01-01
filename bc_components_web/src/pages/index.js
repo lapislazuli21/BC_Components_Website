@@ -45,7 +45,7 @@ export default function Home() {
             <Scroller />
           </div>
           <div className="mx-auto text-center my-10">
-            <Button className='bg-secondary text-dark w-[150px] h-[50px] rounded-full mx-auto sm:mb-0 mb-10'><Link href='/line-card'>View All</Link></Button>
+            <Button className='bg-secondary text-dark w-[150px] h-[50px] rounded-full mx-auto sm:mb-0 mb-10'><Link href='/linecard'>View All</Link></Button>
           </div>
           <div className="mb-10">
             <ContactForm />
