@@ -16,7 +16,7 @@ const Footer = () => {
 
           <div>
             <h3 className='text-center mt-2 sm: py-2'>Site Map</h3>
-            <List className="align-middle">
+            <List className="align-middle justify-center">
               <ListItem className='justify-center text-secondary'>
                 <Link href='/about' ><ListItemText className='text-center'
                   primary="About"
