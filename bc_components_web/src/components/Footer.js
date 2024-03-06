@@ -17,12 +17,12 @@ const Footer = () => {
           <div>
             <h3 className='text-center mt-2 sm: py-2'>Site Map</h3>
             <List className="align-middle">
-              <ListItem className='!justify-center text-secondary'>
+              <ListItem className='!justify-center text-primary'>
                 <Link href='/about' ><ListItemText className='text-center'
                   primary="About"
                 /></Link>
               </ListItem>
-              <ListItem className='justify-center text-secondary'>
+              <ListItem className='justify-center text-primary'>
                 <Link href='/linecard'><ListItemText className='text-center'
                   primary="Line Card"
                 /></Link>

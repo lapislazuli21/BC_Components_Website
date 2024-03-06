@@ -45,8 +45,8 @@ export default function Home() {
             </Carousel>
           </div>
 
-          <div className='my-20'>
-            <h1 className='text-center mx-auto text-5xl text-secondary my-10 sm:text-4xl'>Our Principals</h1>
+          <div className='mt-20 mb-10'>
+            <h1 className='text-center mx-auto text-6xl font-mono font-bold text-dark my-10 sm:text-4xl'>Our Principals</h1>
             <Scroller />
           </div>
           <div className="mx-auto text-center my-10">
