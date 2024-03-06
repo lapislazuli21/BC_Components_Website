@@ -20,23 +20,28 @@ export default function Home() {
             <Carousel interval={2500} autoPlay={true} infiniteLoop={true}>
               <div>
                 <img src="/images/slideshow/Slide1.png" alt="image1" />
-
+                <p className='legend'>BC Components participated in Engimach 2023</p>
               </div>
-              <div>
-                <img src="/images/slideshow/Screenshot (250).png" alt="image2" />
+              {/*<div>
+                <img src="/images/slideshow/Slide2.png" alt="image2" />
                 <p className="legend">Image 2</p>
 
-              </div>
+              </div>*/}
               <div>
-                <img src="/images/slideshow/Screenshot (263).png" alt="image3" />
-                <p className="legend">Image 3</p>
+                <img src="/images/slideshow/Slide3.png" alt="image3" />
+                <p className="legend">SPE, RJ45, HDMI, USB, coaxial for printed circuit boards and M12 panel feed-throughs to D-SUB connectors (Phoenix Contact)</p>
 
               </div>
               <div>
-                <img src="/images/slideshow/Screenshot (372).png" alt="image4" />
-                <p className="legend">Image 4</p>
+                <img src="/images/slideshow/Slide4.png" alt="image4" />
+                <p className="legend">M23 Hybrid Connector (Phoenix Contact)</p>
 
               </div>
+              {/*<div>
+                <img src="/images/slideshow/Slide5.png" alt="image5" />
+                <p className="legend">Image 5</p>
+
+              </div>*/}
             </Carousel>
           </div>
 

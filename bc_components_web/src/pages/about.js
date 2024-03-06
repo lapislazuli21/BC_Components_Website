@@ -1,22 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
-import { useState } from 'react'
 import Layout from '../components/Layout'
 import AboutTile from '../components/AboutTile'
 
 const About = () => {
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleClick = () => {
-    setIsOpen(!isOpen)
-  }
-
-  const [isOn, setIsOn] = useState(false);
-
-  const toggleClick = () => {
-    setIsOn(!isOn)
-  }
 
   return (
     <>
@@ -29,12 +17,9 @@ const About = () => {
           <h1 className='pb-8 sm:pt-8 sm:pb-4 text-5xl sm:text-center sm:text-4xl sm:my-4'>Meet Our Pillars</h1>
           <hr className='border-secondary' />
           <div className='py-4'> {/*Team*/}
-            <AboutTile name={"Vijay Bhayani"} />
-            <button className='bg-primary text-light sm:flex sm:mx-auto sm:mb-2 border-primary border-2 p-4 rounded-xl sm:rounded-full' onClick={handleClick}>View Bio</button>
-            <p className={`font-semibold text-lg pt-2 sm:text-center ${isOpen ? 'sm:flex' : 'hidden'}`}>Mr. Vijay Bhayani brings a wealth of experience and industry insight to our company. Over the years, he has mastered every facet of the industry and his leadership, honed through years of experience, guides our company into the future. </p>
-            <AboutTile name={"Prashant Gandhi"} />
-            <button className='bg-primary text-light sm:flex sm:mx-auto sm:mb-2 border-primary border-2 p-4 rounded-xl sm:rounded-full' onClick={toggleClick}>View Bio</button>
-            <p className={`font-semibold text-lg pt-2 sm:text-center ${isOn ? 'sm:flex' : 'hidden'}`}>Mr. Prashant Gandhi brings his zeal and creative ideas to our company, revolutionizing it at every stage. He has built a sterling reputation for hia creative ideas and transformative leadership, driving our company towards innovative solutions within the ever-evolving landscape of the industry.</p>
+            <AboutTile name={"Vijay Bhayani"} description={"Mr. Vijay Bhayani brings a wealth of experience and industry insight to our company. Over the years, he has mastered every facet of the industry and his leadership, honed through years of experience, guides our company into the future."} />
+            {/*<hr className='border-dark w-20 sm:hidden' />*/}
+            <AboutTile name={"Prashant Gandhi"} description={"Mr. Prashant Gandhi brings his zeal and creative ideas to our company, revolutionizing it at every stage. He has built a sterling reputation for hia creative ideas and transformative leadership, driving our company towards innovative solutions within the ever-evolving landscape of the industry."} />
           </div>
           <h1 className='py-8 sm:pt-4 sm:pb-4 text-5xl sm:text-center sm:text-4xl sm:my-4'>About Us</h1>
           <hr className='border-secondary pb-8' />

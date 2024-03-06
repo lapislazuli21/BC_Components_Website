@@ -28,43 +28,43 @@ const Scroller = () => {
 
                 >
                     <SwiperSlide>
-                        <CardPreview image={'/images/svgs/Phoenix_Contact_Logo.png'} title={"Logo"} body={"Phoenix Contact"} />
+                        <CardPreview image={'/images/svgs/Phoenix_Contact_Logo.png'} title={"Logo"} body={"Phoenix Contact"} url={"https://www.phoenixcontact.com/en-in/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/Pro.png"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/Pro.png"} title={"Logo"} url={"https://protectron.in/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/Elcom_Logo.png"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/Elcom_Logo.png"} title={"Logo"} url={"https://elcom-in.com/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/CTR_Logo.png"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/CTR_Logo.png"} title={"Logo"} url={"https://ctr.in/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={'/images/svgs/BC Logos/Agility_Logo.png'} title={"Logo"} />
+                        <CardPreview image={'/images/svgs/BC Logos/Agility_Logo.png'} title={"Logo"} url={"http://www.agility.net.in/"} />
                     </SwiperSlide>
                     <SwiperSlide>
                         <CardPreview image={"/images/svgs/BC Logos/BT_Logo.jpg"} title={"Logo"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/BC Logos/Cedicom_Logo.jpg"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/BC Logos/Cedicom_Logo.jpg"} title={"Logo"} url={"http://www.cedicom.com/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/BC Logos/Hummel_Logo.png"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/BC Logos/Hummel_Logo.png"} title={"Logo"} url={"https://www.hummel.com/en/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/BC Logos/INCAP_Logo.jpg"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/BC Logos/INCAP_Logo.jpg"} title={"Logo"} url={"https://www.incaplimited.in/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/BC Logos/Keltron_Logo.png"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/BC Logos/Keltron_Logo.png"} title={"Logo"} url={"https://www.keltron.org/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/BC Logos/Prime_Logo.png"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/BC Logos/Prime_Logo.png"} title={"Logo"} url={"https://www.primecomponents.net/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/BC Logos/THK_Logo.png"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/BC Logos/THK_Logo.png"} title={"Logo"} url={"https://www.thakorelectronics.com/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/BC Logos/Watts_Logo.png"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/BC Logos/Watts_Logo.png"} title={"Logo"} url={"https://www.wattselectronics.in/"} />
                     </SwiperSlide>
 
                 </Swiper>
@@ -87,43 +87,43 @@ const Scroller = () => {
 
                 >
                     <SwiperSlide>
-                        <CardPreview image={'/images/svgs/Phoenix_Contact_Logo.png'} title={"Logo"} body={"Phoenix Contact"} />
+                        <CardPreview image={'/images/svgs/Phoenix_Contact_Logo.png'} title={"Logo"} body={"Phoenix Contact"} url={"https://www.phoenixcontact.com/en-in/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/Pro.png"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/Pro.png"} title={"Logo"} url={"https://protectron.in/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/Elcom_Logo.png"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/Elcom_Logo.png"} title={"Logo"} url={"https://elcom-in.com/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/CTR_Logo.png"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/CTR_Logo.png"} title={"Logo"} url={"https://ctr.in/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={'/images/svgs/BC Logos/Agility_Logo.png'} title={"Logo"} />
+                        <CardPreview image={'/images/svgs/BC Logos/Agility_Logo.png'} title={"Logo"} url={"http://www.agility.net.in/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/BC Logos/BT_Logo.jpg"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/BC Logos/BT_Logo.jpg"} title={"Logo"} url={"https://www.phoenixcontact.com/en-in/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/BC Logos/Cedicom_Logo.jpg"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/BC Logos/Cedicom_Logo.jpg"} title={"Logo"} url={"https://www.cedicom.com/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/BC Logos/Hummel_Logo.png"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/BC Logos/Hummel_Logo.png"} title={"Logo"} url={"https://www.hummel.com/en/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/BC Logos/INCAP_Logo.jpg"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/BC Logos/INCAP_Logo.jpg"} title={"Logo"} url={"https://www.incaplimited.in/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/BC Logos/Keltron_Logo.png"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/BC Logos/Keltron_Logo.png"} title={"Logo"} url={"https://www.keltron.org/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/BC Logos/Prime_Logo.png"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/BC Logos/Prime_Logo.png"} title={"Logo"} url={"https://www.primecomponents.net/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/BC Logos/THK_Logo.png"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/BC Logos/THK_Logo.png"} title={"Logo"} url={"https://www.thakorelectronics.com/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/BC Logos/Watts_Logo.png"} title={"Logo"} />
+                        <CardPreview image={"/images/svgs/BC Logos/Watts_Logo.png"} title={"Logo"} url={"https://www.wattselectronics.in/"} />
                     </SwiperSlide>
 
                 </Swiper>
