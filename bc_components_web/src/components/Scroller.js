@@ -55,7 +55,7 @@ const Scroller = () => {
                         <CardPreview image={"/images/svgs/BC Logos/INCAP_Logo.jpg"} title={"Logo"} url={"https://www.incaplimited.in/"} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <CardPreview image={"/images/svgs/BC Logos/Keltron_Logo.png"} title={"Logo"} url={"https://www.keltron.org/"} />
+                        <CardPreview image={"/images/svgs/BC Logos/Keltron_logo.png"} title={"Logo"} url={"https://www.keltron.org/"} />
                     </SwiperSlide>
                     <SwiperSlide>
                         <CardPreview image={"/images/svgs/BC Logos/Prime_Logo.png"} title={"Logo"} url={"https://www.primecomponents.net/"} />
