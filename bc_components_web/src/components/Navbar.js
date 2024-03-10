@@ -51,7 +51,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className=' w-full px-32 py-8 font-medium flex items-center justify-between relative z-10 lg:px-16 md:px-12 sm:px-6 overflow-x-clip'>
+      <header className=' w-full px-32 pb-8 pt-10 font-medium flex items-center justify-between relative z-10 lg:px-16 md:px-12 sm:px-6 overflow-x-clip'>
 
         <button className='hidden flex-col items-center justify-center lg:flex' onClick={handleClick}>
           <span className={`bg-dark dark:bg-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
@@ -74,7 +74,7 @@ const Navbar = () => {
             </motion.a>
           </nav>
         </div>
-        <div className='absolute left-[50%] top-2 translate-x-[-50%]'>
+        <div className='absolute left-[50%] top-4 translate-x-[-50%]'>
           <Link href='/'>
             <MotionImage src={logo} alt="Logo" className='w-40 h-20 mt-2' whileHover={{ x: 8 }} transition={{ ease: easeInOut }} />
           </Link>

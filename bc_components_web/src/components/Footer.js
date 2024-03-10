@@ -10,9 +10,9 @@ import ListItemText from '@mui/material/ListItemText';
 const Footer = () => {
   return (
     <div>
-      <footer className='w-full sm:bg-secondary border-t-2 border-secondary font-medium text-lg sm:text-base'>
+      <footer className='w-full bg-light border-t-2 border-secondary font-medium text-lg sm:text-base'>
 
-        <Layout className='py-8 sm:py-16 flex items-center justify-around dark:text-light lg:flex-col lg:py-6'>
+        <Layout className='py-8 sm:border-none flex items-center justify-around dark:text-light lg:flex-col lg:py-6'>
 
           <div>
             <h3 className='text-center mt-2 sm: py-2'>Site Map</h3>
@@ -30,11 +30,19 @@ const Footer = () => {
             </List>
           </div>
 
-          <div className="sm: py-2">
+          <div className="sm:hidden">
             <Image
               src={logo}
               width={250}
               height={250}
+              alt="Logo"
+            />
+          </div>
+          <div className="hidden sm:flex sm:py-2 pr-1.5">
+            <Image
+              src={logo}
+              width={125}
+              height={125}
               alt="Logo"
             />
           </div>
@@ -58,7 +66,7 @@ const Footer = () => {
           </div>
         </Layout>
 
-        <Layout className='py-8 flex items-center justify-around dark:text-light lg:flex-col lg:py-6'>
+        <Layout className='py-8 sm:pt-0 px-8 flex items-center justify-around dark:text-light lg:flex-col lg:py-6'>
           <span className='text-center'>{new Date().getFullYear()} &copy; All Rights Reserved.</span>
           <div className='flex items-center lg:py-2 sm:flex-col sm:items-center sm:justify-center'>
             <span className='text-center'>Made by&nbsp;<a href="https://khushgandhi.tech/" target='_blank' className='text-footer dark:text-secondary'>Khush Gandhi</a></span>

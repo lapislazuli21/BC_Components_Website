@@ -40,7 +40,7 @@ const ContactForm = () => {
                             <input type="tel" placeholder='Phone' className='mx-5 rounded-md w-[540px] h-[40px] p-4 border-primary border-2' {...register("contact")} defaultValue={""}></input>
                         </div>
                     </div>
-                    <div className='my-5 mx-4 flex flex-row items-center justify-center'>
+                    <div className='my-5 flex flex-row items-center justify-center'>
                         <textarea placeholder='Message' className='mx-5 rounded-md w-[540px] h-[130px] p-2 border-primary border-2' {...register("message")} required></textarea>
                     </div>
                 </div>
