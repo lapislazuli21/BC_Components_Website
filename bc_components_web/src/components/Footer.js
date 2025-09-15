@@ -53,7 +53,7 @@ const Footer = () => {
               <ListItem>
                 <ListItemText className='text-center text-primary'
                   primary="Call us"
-                  secondary="+91-22-40052332"
+                  secondary="+91-22-35691666"
                 />
               </ListItem>
               <ListItem>
