@@ -12,7 +12,17 @@ const navLinks = [
     { href: "/contact", label: "Contact" },
 ];
 
-const currentPath = Astro.url.pathname;
+// Normalize current path by removing trailing slash (except for home)
+const rawPath = Astro.url.pathname;
+const currentPath = rawPath === "/" ? "/" : rawPath.replace(/\/$/, "");
+
+// Helper function to check if link is active
+function isActiveLink(linkHref: string): boolean {
+    if (linkHref === "/") {
+        return currentPath === "/";
+    }
+    return currentPath === linkHref || currentPath.startsWith(linkHref + "/");
+}
 ---
 
 <header
@@ -50,7 +60,7 @@ const currentPath = Astro.url.pathname;
                         <a
                             href={link.href}
                             class={`relative font-medium transition-colors duration-200 ${
-                                currentPath === link.href
+                                isActiveLink(link.href)
                                     ? "text-primary-500"
                                     : "text-gray-700 hover:text-primary-500"
                             }`}
@@ -58,7 +68,7 @@ const currentPath = Astro.url.pathname;
                             {link.label}
                             <span
                                 class={`absolute -bottom-1 left-0 h-0.5 bg-primary-500 transition-all duration-300 ${
-                                    currentPath === link.href ? "w-full" : "w-0"
+                                    isActiveLink(link.href) ? "w-full" : "w-0"
                                 } group-hover:w-full`}
                             />
                         </a>
@@ -157,7 +167,7 @@ const currentPath = Astro.url.pathname;
                         <a
                             href={link.href}
                             class={`py-2 font-medium transition-colors ${
-                                currentPath === link.href
+                                isActiveLink(link.href)
                                     ? "text-primary-500"
                                     : "text-gray-700 hover:text-primary-500"
                             }`}
