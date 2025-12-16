@@ -1,0 +1,95 @@
+---
+interface StatItem {
+    value: number;
+    suffix?: string;
+    label: string;
+}
+
+const stats: StatItem[] = [
+    { value: 22, suffix: "+", label: "Years of Excellence" },
+    { value: 500, suffix: "+", label: "Clients Served" },
+    { value: 15, suffix: "+", label: "Principal Partners" },
+    { value: 1000, suffix: "+", label: "Products Available" },
+];
+---
+
+<section class="py-20 bg-gradient-to-b from-light to-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {
+                stats.map((stat, index) => (
+                    <div
+                        class="stat-card animate-scale-in"
+                        style={`animation-delay: ${index * 100}ms`}
+                    >
+                        <div
+                            class="stat-number counter"
+                            data-target={stat.value}
+                            data-suffix={stat.suffix || ""}
+                        >
+                            0{stat.suffix || ""}
+                        </div>
+                        <div class="stat-label">{stat.label}</div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<script>
+    function initCounters() {
+        const counters = document.querySelectorAll(".counter");
+
+        const observerCallback = (entries: IntersectionObserverEntry[]) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target as HTMLElement;
+                    const target = parseInt(
+                        counter.getAttribute("data-target") || "0",
+                        10,
+                    );
+                    const suffix = counter.getAttribute("data-suffix") || "";
+
+                    let current = 0;
+                    const duration = 2000;
+                    const startTime = performance.now();
+
+                    function easeOutQuad(t: number): number {
+                        return t * (2 - t);
+                    }
+
+                    function updateCounter(currentTime: number) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+
+                        current = Math.floor(easeOutQuad(progress) * target);
+                        counter.textContent = current + suffix;
+
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target + suffix;
+                        }
+                    }
+
+                    requestAnimationFrame(updateCounter);
+                    observer.unobserve(counter);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, {
+            threshold: 0.3,
+            rootMargin: "0px 0px -50px 0px",
+        });
+
+        counters.forEach((counter) => observer.observe(counter));
+    }
+
+    // Initialize on DOMContentLoaded
+    document.addEventListener("DOMContentLoaded", initCounters);
+
+    // Also initialize for Astro view transitions
+    document.addEventListener("astro:page-load", initCounters);
+</script>

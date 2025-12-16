@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-light text-dark font-sans antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-light;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
+
+  /* Selection color */
+  ::selection {
+    @apply bg-primary-200 text-primary-900;
+  }
+}
+
+@layer components {
+
+  /* Glass Card */
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 rounded-2xl shadow-glass;
+  }
+
+  .glass-card-dark {
+    @apply bg-dark/70 backdrop-blur-md border border-white/10 rounded-2xl shadow-glass;
+  }
+
+  /* Gradient Backgrounds */
+  .bg-gradient-primary {
+    @apply bg-gradient-to-br from-primary-500 via-primary-600 to-secondary-500;
+  }
+
+  .bg-gradient-hero {
+    background: linear-gradient(135deg,
+        rgba(161, 57, 141, 0.1) 0%,
+        rgba(236, 115, 87, 0.05) 50%,
+        rgba(212, 175, 55, 0.1) 100%);
+  }
+
+  .bg-mesh-pattern {
+    background-image:
+      radial-gradient(at 40% 20%, rgba(161, 57, 141, 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(236, 115, 87, 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, rgba(212, 175, 55, 0.1) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, rgba(161, 57, 141, 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(236, 115, 87, 0.1) 0px, transparent 50%);
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-600 hover:to-primary-700 focus:ring-primary-500 shadow-glow-primary;
+  }
+
+  .btn-secondary {
+    @apply btn bg-gradient-to-r from-secondary-500 to-secondary-600 text-white hover:from-secondary-600 hover:to-secondary-700 focus:ring-secondary-500 shadow-glow-secondary;
+  }
+
+  .btn-gold {
+    @apply btn bg-gradient-to-r from-gold-500 to-gold-600 text-dark hover:from-gold-600 hover:to-gold-700 focus:ring-gold-500 shadow-glow-gold;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white;
+  }
+
+  /* Input Forms */
+  .form-input {
+    @apply w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+  }
+
+  /* Select dropdown with proper icon spacing */
+  select.form-input {
+    @apply pr-10 appearance-none cursor-pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.25em 1.25em;
+  }
+
+  .form-textarea {
+    @apply w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-none min-h-[120px];
+  }
+
+  /* Section Titles */
+  .section-title {
+    @apply text-4xl md:text-5xl font-display font-bold text-dark;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-gray-600 max-w-2xl;
+  }
+
+  /* Anniversary Badge */
+  .anniversary-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-gold-400 to-gold-600 text-dark font-bold rounded-full shadow-glow-gold animate-pulse-soft;
+  }
+
+  /* Principal Logo Grid */
+  .logo-grid-item {
+    @apply flex items-center justify-center p-4 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300;
+  }
+
+  /* Stat Counter */
+  .stat-card {
+    @apply flex flex-col items-center text-center p-6 bg-white/70 backdrop-blur-md border border-white/20 rounded-2xl shadow-glass;
+  }
+
+  .stat-number {
+    @apply text-5xl md:text-6xl font-display font-bold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent;
+  }
+
+  .stat-label {
+    @apply mt-2 text-gray-600 font-medium;
+  }
+
+  /* Infinite Scroll Animation */
+  .scroll-container {
+    @apply flex overflow-hidden;
+  }
+
+  .scroll-content {
+    @apply flex gap-8 animate-scroll;
+  }
+
+  .scroll-content:hover {
+    animation-play-state: paused;
+  }
+
+  /* Timeline */
+  .timeline-item {
+    @apply relative pl-8 pb-8 border-l-2 border-primary-200;
+  }
+
+  .timeline-item:last-child {
+    @apply pb-0;
+  }
+
+  .timeline-dot {
+    @apply absolute left-0 -translate-x-1/2 w-4 h-4 rounded-full bg-primary-500 border-4 border-white shadow-md;
+  }
+
+  /* Card Hover Effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-glass-lg;
+  }
+
+  /* Text Gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+
+  /* Animation Delays */
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

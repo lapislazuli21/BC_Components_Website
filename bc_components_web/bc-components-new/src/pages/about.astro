@@ -1,0 +1,238 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+interface TeamMember {
+  name: string;
+  title: string;
+  description: string;
+  image?: string;
+}
+
+interface Milestone {
+  year: string;
+  title: string;
+  description: string;
+}
+
+const teamMembers: TeamMember[] = [
+  {
+    name: 'Vijay Bhayani',
+    title: 'Director',
+    description: 'Mr. Vijay Bhayani brings a wealth of experience and industry insight to our company. Over the years, he has mastered every facet of the industry and his leadership, honed through years of experience, guides our company into the future.',
+    image: '/images/team/vijay-bhayani.jpg'
+  },
+  {
+    name: 'Prashant Gandhi',
+    title: 'Director',
+    description: 'Mr. Prashant Gandhi brings his zeal and creative ideas to our company, revolutionizing it at every stage. He has built a sterling reputation for his creative ideas and transformative leadership, driving our company towards innovative solutions within the ever-evolving landscape of the industry.',
+    image: '/images/team/prashant-gandhi.jpg'
+  }
+];
+
+const milestones: Milestone[] = [
+  { year: '1985', title: 'Foundation', description: 'Our parent company was established as a distributor of general electronic components.' },
+  { year: '2003', title: 'BC Components Born', description: 'BC Components was established, marking the beginning of a new era in electronic component distribution.' },
+  { year: '2010', title: 'Strategic Partnerships', description: 'Became authorized distributor for Phoenix Contact, expanding our product portfolio significantly.' },
+  { year: '2015', title: 'Pan-India Presence', description: 'Expanded operations to serve clients across India with improved logistics and support.' },
+  { year: '2020', title: 'Digital Transformation', description: 'Embraced digital solutions to better serve our customers during challenging times.' },
+  { year: '2025', title: '22 Years of Excellence', description: 'Celebrating over two decades of trusted partnerships and industry leadership.' },
+];
+
+const industries = [
+  { name: 'Power', icon: 'bolt' },
+  { name: 'Automation', icon: 'cog' },
+  { name: 'Energy', icon: 'sun' },
+  { name: 'Lighting', icon: 'light' },
+  { name: 'Instrumentation', icon: 'chart' },
+  { name: 'Manufacturing', icon: 'factory' },
+];
+
+const iconMap: Record<string, string> = {
+  bolt: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />',
+  cog: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />',
+  sun: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />',
+  light: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />',
+  chart: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />',
+  factory: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />',
+};
+---
+
+<BaseLayout 
+  title="About Us | BC Components - 22 Years of Excellence"
+  description="Learn about BC Components' journey of 22 years as a trusted electronic component distributor. Meet our leadership team and discover our mission."
+>
+  <!-- Hero Section -->
+  <section class="relative py-20 bg-mesh-pattern overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute top-20 right-20 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 left-20 w-72 h-72 bg-secondary-500/10 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="inline-block px-4 py-2 bg-primary-100 text-primary-600 rounded-full text-sm font-medium mb-6">
+          Our Story
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6">
+          Building Trust for
+          <span class="text-gradient"> 22 Years</span>
+        </h1>
+        <p class="text-xl text-gray-600">
+          From humble beginnings to becoming a trusted name in electronic component distribution, 
+          our journey has been defined by commitment to quality and customer satisfaction.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Who We Are -->
+        <div class="glass-card p-8 lg:p-10">
+          <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h2 class="text-3xl font-display font-bold mb-4">Who We Are</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Our parent company was established in <strong>1985</strong>, initially as a distributor of general electronic components. 
+            In no time, we became the <strong>most trusted</strong> channel partner for all our valued principals.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            With our <strong>expansive product portfolio and unbeatable customer satisfaction</strong>, 
+            BC Components has also become an integral part of the Indian electronic industry.
+          </p>
+        </div>
+
+        <!-- What We Do -->
+        <div class="glass-card p-8 lg:p-10">
+          <div class="w-14 h-14 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h2 class="text-3xl font-display font-bold mb-4">What We Do</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            We cater to OEMs in <strong>Power, Automation, Energy, Lighting, Instrumentation</strong> 
+            and many other industrial sectors.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            We strive to provide the best experience to our customers, team, and principals. 
+            Their support has allowed us to become <strong>one of the most value-added service providers</strong> 
+            in the industry today.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership Team -->
+  <section class="py-20 bg-gradient-to-b from-light to-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="section-title mb-4">Meet Our Pillars</h2>
+        <p class="section-subtitle mx-auto">
+          The visionary leaders guiding BC Components towards continued success
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {teamMembers.map((member) => (
+          <div class="glass-card p-8 card-hover group">
+            <!-- Avatar/Placeholder -->
+            <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary-400 to-secondary-500 flex items-center justify-center overflow-hidden">
+              <!-- Placeholder initials - will be replaced with actual images -->
+              <span class="text-3xl font-bold text-white">
+                {member.name.split(' ').map(n => n[0]).join('')}
+              </span>
+            </div>
+            
+            <div class="text-center">
+              <h3 class="text-2xl font-display font-bold mb-1">{member.name}</h3>
+              <p class="text-primary-500 font-medium mb-4">{member.title}</p>
+              <p class="text-gray-600 leading-relaxed">{member.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries Served -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="section-title mb-4">Industries We Serve</h2>
+        <p class="section-subtitle mx-auto">
+          Providing quality electronic components across diverse industrial sectors
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        {industries.map((industry, index) => (
+          <div 
+            class="glass-card p-6 text-center card-hover animate-scale-in"
+            style={`animation-delay: ${index * 100}ms`}
+          >
+            <div class="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={iconMap[industry.icon]} />
+            </div>
+            <p class="font-semibold text-dark">{industry.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="py-20 bg-gradient-to-b from-light to-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="section-title mb-4">Our Journey</h2>
+        <p class="section-subtitle mx-auto">
+          Key milestones that have shaped our growth over the decades
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto">
+        {milestones.map((milestone, index) => (
+          <div class="timeline-item animate-slide-up" style={`animation-delay: ${index * 150}ms`}>
+            <div class="timeline-dot"></div>
+            <div class="glass-card p-6 ml-4">
+              <div class="flex items-center gap-4 mb-2">
+                <span class="px-3 py-1 bg-primary-100 text-primary-600 rounded-full text-sm font-bold">
+                  {milestone.year}
+                </span>
+                <h3 class="text-xl font-semibold">{milestone.title}</h3>
+              </div>
+              <p class="text-gray-600">{milestone.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-primary text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-display font-bold mb-6">
+        Ready to Partner with Us?
+      </h2>
+      <p class="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+        Join hundreds of satisfied clients who trust BC Components for their electronic component needs.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn bg-white text-primary-600 hover:bg-gray-100">
+          Get in Touch
+        </a>
+        <a href="/linecard" class="btn border-2 border-white text-white hover:bg-white/10">
+          View Line Card
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

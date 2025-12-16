@@ -1,0 +1,138 @@
+---
+import "../styles/global.css";
+import Header from "../components/common/Header.astro";
+import Footer from "../components/common/Footer.astro";
+import WhatsAppButton from "../components/ui/WhatsAppButton.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = "BC Components - 22 Years of Excellence in Electronic Component Distribution. Trusted channel partner for Phoenix Contact, Protectron, Elcom, and more.",
+  image = "/images/og-image.jpg",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Check if we're in anniversary period (December 2025)
+const now = new Date();
+const isAnniversaryPeriod = now.getMonth() === 11 && now.getFullYear() === 2025;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="BC Components" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/profile/BC_Components_Logo.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/profile/BC_Components_Logo.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/profile/BC_Components_Logo.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/profile/BC_Components_Logo.png"
+    />
+    <link rel="shortcut icon" href="/images/profile/BC_Components_Logo.png" />
+
+    <!-- View Transitions -->
+    <meta name="view-transition" content="same-origin" />
+
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen flex flex-col bg-light">
+    <!-- Anniversary Banner (December 2025 only) -->
+    {
+      isAnniversaryPeriod && (
+        <div class="bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500 text-dark py-2 px-4 text-center text-sm font-medium">
+          <span class="inline-flex items-center gap-2">
+            <svg
+              class="w-4 h-4 animate-sparkle"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            🎉 Celebrating 22 Years of Excellence! Thank you for your trust and
+            partnership.
+            <svg
+              class="w-4 h-4 animate-sparkle"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          </span>
+        </div>
+      )
+    }
+
+    <Header isAnniversary={isAnniversaryPeriod} />
+
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <!-- WhatsApp Floating Button -->
+    <WhatsAppButton />
+
+    <!-- Smooth scroll for anchor links -->
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", (e) => {
+          e.preventDefault();
+          const href = anchor.getAttribute("href");
+          if (href) {
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

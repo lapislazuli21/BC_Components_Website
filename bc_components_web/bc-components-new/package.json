@@ -1,0 +1,21 @@
+{
+  "name": "bc-components-website",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "BC Components - 22 Years of Excellence in Electronic Component Distribution",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/tailwind": "^5.1.4",
+    "astro": "^4.16.18",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}

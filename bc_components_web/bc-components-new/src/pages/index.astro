@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/home/Hero.astro";
+import Stats from "../components/home/Stats.astro";
+import Principals from "../components/home/Principals.astro";
+import Categories from "../components/home/Categories.astro";
+import ContactSection from "../components/home/ContactSection.astro";
+
+// Check if we're in anniversary period (December 2025)
+const now = new Date();
+const isAnniversaryPeriod = now.getMonth() === 11 && now.getFullYear() === 2025;
+---
+
+<BaseLayout title="BC Components | Trusted Electronic Component Distributor">
+	<Hero isAnniversary={isAnniversaryPeriod} />
+	<Stats />
+	<Principals />
+	<Categories />
+	<ContactSection />
+</BaseLayout>

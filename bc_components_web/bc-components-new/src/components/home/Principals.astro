@@ -1,0 +1,150 @@
+---
+interface Principal {
+    name: string;
+    logo: string;
+    url: string;
+}
+
+const principals: Principal[] = [
+    {
+        name: "Phoenix Contact",
+        logo: "/images/svgs/Phoenix_Contact_Logo.png",
+        url: "https://www.phoenixcontact.com/en-in/",
+    },
+    {
+        name: "Protectron",
+        logo: "/images/svgs/Pro.png",
+        url: "https://protectron.in/",
+    },
+    {
+        name: "Elcom",
+        logo: "/images/svgs/Elcom_Logo.png",
+        url: "https://elcom-in.com/",
+    },
+    { name: "CTR", logo: "/images/svgs/CTR_Logo.png", url: "https://ctr.in/" },
+    {
+        name: "Agility",
+        logo: "/images/svgs/BC Logos/Agility_Logo.png",
+        url: "http://www.agility.net.in/",
+    },
+    {
+        name: "BT Electronics",
+        logo: "/images/svgs/BC Logos/BT_Logo.jpg",
+        url: "#",
+    },
+    {
+        name: "Cedicom",
+        logo: "/images/svgs/BC Logos/Cedicom_Logo.jpg",
+        url: "http://www.cedicom.com/",
+    },
+    {
+        name: "Hummel",
+        logo: "/images/svgs/BC Logos/Hummel_Logo.png",
+        url: "https://www.hummel.com/en/",
+    },
+    {
+        name: "INCAP",
+        logo: "/images/svgs/BC Logos/INCAP_Logo.jpg",
+        url: "https://www.incaplimited.in/",
+    },
+    {
+        name: "Keltron",
+        logo: "/images/svgs/BC Logos/Keltron_logo.png",
+        url: "https://www.keltroncomp.org/",
+    },
+    {
+        name: "Prime Components",
+        logo: "/images/svgs/BC Logos/Prime_Logo.png",
+        url: "https://www.primecomponents.net/",
+    },
+    {
+        name: "THK Electronics",
+        logo: "/images/svgs/BC Logos/THK_Logo.png",
+        url: "https://www.thakorelectronics.com/",
+    },
+    {
+        name: "Watts Electronics",
+        logo: "/images/svgs/BC Logos/Watts_Logo.png",
+        url: "https://www.wattselectronics.in/",
+    },
+];
+
+// Duplicate for seamless infinite scroll
+const duplicatedPrincipals = [...principals, ...principals];
+---
+
+<section class="py-20 bg-white overflow-hidden">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <div class="text-center max-w-3xl mx-auto">
+            <h2 class="section-title mb-4">Our Principals</h2>
+            <p class="section-subtitle mx-auto">
+                Partnering with industry-leading manufacturers to bring you the
+                best electronic components
+            </p>
+        </div>
+    </div>
+
+    <!-- Infinite Scroll Container -->
+    <div class="scroll-container">
+        <div class="scroll-content">
+            {
+                duplicatedPrincipals.map((principal) => (
+                    <a
+                        href={principal.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex-shrink-0 w-48 h-32 flex items-center justify-center p-4 bg-white rounded-xl border border-gray-100 hover:border-primary-200 hover:shadow-lg transition-all duration-300 grayscale hover:grayscale-0 opacity-70 hover:opacity-100"
+                        title={principal.name}
+                    >
+                        <img
+                            src={principal.logo}
+                            alt={principal.name}
+                            class="max-w-full max-h-full object-contain"
+                            loading="lazy"
+                        />
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+
+    <!-- View All Button -->
+    <div class="text-center mt-12">
+        <a href="/linecard" class="btn-outline">
+            <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+            </svg>
+            View Complete Line Card
+        </a>
+    </div>
+</section>
+
+<style>
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .scroll-content {
+        display: flex;
+        gap: 2rem;
+        animation: scroll 40s linear infinite;
+    }
+
+    .scroll-content:hover {
+        animation-play-state: paused;
+    }
+</style>

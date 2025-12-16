@@ -1,0 +1,272 @@
+---
+interface Props {
+    isAnniversary?: boolean;
+}
+
+const { isAnniversary = false } = Astro.props;
+---
+
+<section
+    class="relative min-h-[90vh] flex items-center overflow-hidden bg-mesh-pattern"
+>
+    <!-- Background decorative elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div
+            class="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl animate-float"
+        >
+        </div>
+        <div
+            class="absolute bottom-20 right-10 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl animate-float delay-200"
+        >
+        </div>
+        {
+            isAnniversary && (
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-500/5 rounded-full blur-3xl" />
+            )
+        }
+    </div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Text Content -->
+            <div class="text-center lg:text-left">
+                {
+                    isAnniversary && (
+                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-gold-400 to-gold-600 text-dark font-bold rounded-full shadow-glow-gold mb-6 animate-fade-in">
+                            <svg
+                                class="w-5 h-5 animate-sparkle"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            Celebrating 22 Years of Excellence
+                            <svg
+                                class="w-5 h-5 animate-sparkle"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                        </div>
+                    )
+                }
+
+                <h1
+                    class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 animate-slide-up"
+                >
+                    Your Trusted Partner in
+                    <span class="text-gradient block mt-2"
+                        >Electronic Components</span
+                    >
+                </h1>
+
+                <p
+                    class="text-lg sm:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 animate-slide-up delay-100"
+                >
+                    Connecting industries with world-class electronic
+                    components. From connectors to automation products, we
+                    deliver quality you can rely on.
+                </p>
+
+                <div
+                    class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up delay-200"
+                >
+                    <a href="/linecard" class="btn-primary">
+                        <svg
+                            class="w-5 h-5 mr-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                            ></path>
+                        </svg>
+                        View Line Card
+                    </a>
+                    <a href="/contact" class="btn-outline">
+                        <svg
+                            class="w-5 h-5 mr-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                            ></path>
+                        </svg>
+                        Get in Touch
+                    </a>
+                </div>
+
+                <!-- Trust indicators -->
+                <div
+                    class="mt-12 flex flex-wrap justify-center lg:justify-start gap-8 text-gray-500 animate-fade-in delay-300"
+                >
+                    <div class="flex items-center gap-2">
+                        <svg
+                            class="w-5 h-5 text-green-500"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-sm font-medium"
+                            >Authorized Distributor</span
+                        >
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg
+                            class="w-5 h-5 text-green-500"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-sm font-medium">Global Reach</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg
+                            class="w-5 h-5 text-green-500"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-sm font-medium"
+                            >Technical Support</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image / Visual with Fading Carousel -->
+            <div class="relative hidden lg:block animate-slide-in-right">
+                <!-- Decorative card stack -->
+                <div class="relative">
+                    <!-- Background cards -->
+                    <div
+                        class="absolute top-8 left-8 w-full h-full glass-card opacity-60"
+                    >
+                    </div>
+                    <div
+                        class="absolute top-4 left-4 w-full h-full glass-card opacity-80"
+                    >
+                    </div>
+
+                    <!-- Main image card with fading slideshow -->
+                    <div class="relative glass-card p-8">
+                        <div
+                            class="relative w-full aspect-[4/3] overflow-hidden rounded-lg"
+                        >
+                            <img
+                                src="/images/slideshow/Slide1.1.JPG"
+                                alt="BC Components Products"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000"
+                                loading="eager"
+                            />
+                            <!-- <img
+                                src="/images/slideshow/Slide2.png"
+                                alt="Electronic Components"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+                                loading="lazy"
+                            /> -->
+                            <img
+                                src="/images/slideshow/Slide3.png"
+                                alt="Industrial Connectors"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+                                loading="lazy"
+                            />
+                            <img
+                                src="/images/slideshow/Slide4.png"
+                                alt="Terminal Blocks"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+                                loading="lazy"
+                            />
+                            <img
+                                src="/images/slideshow/Slide5.png"
+                                alt="Automation Products"
+                                class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg
+            class="w-6 h-6 text-gray-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+    </div>
+</section>
+
+<script>
+    function initHeroSlideshow() {
+        const slides = document.querySelectorAll(".hero-slide");
+        if (slides.length === 0) return;
+
+        let currentSlide = 0;
+        const slideCount = slides.length;
+        const intervalTime = 4000; // 4 seconds per slide
+
+        function showSlide(index: number) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    (slide as HTMLElement).style.opacity = "1";
+                } else {
+                    (slide as HTMLElement).style.opacity = "0";
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slideCount;
+            showSlide(currentSlide);
+        }
+
+        // Start the slideshow
+        const intervalId = setInterval(nextSlide, intervalTime);
+
+        // Clean up on page navigation (for Astro view transitions)
+        document.addEventListener(
+            "astro:before-preparation",
+            () => {
+                clearInterval(intervalId);
+            },
+            { once: true },
+        );
+    }
+
+    // Initialize on page load
+    document.addEventListener("DOMContentLoaded", initHeroSlideshow);
+    document.addEventListener("astro:page-load", initHeroSlideshow);
+</script>
